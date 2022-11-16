@@ -9,19 +9,20 @@ using namespace std;
 class Solution{
 public:	
 	
+	int recursive(string& S, int l,int r){
+	    
+	    if(l>=r) return 1;
+	    
+	    if(S[l] == S[r]){
+	        return recursive(S,l+1,r-1);
+	    }
+	    return 0;
+	}
 	
 	int isPalindrome(string S)
 	{
 	    // Your code goes here
-	    int i = 0;
-	    int j = S.length()-1;
-	    
-	    while(i<j){
-	        if(S[i] != S[j]) return 0;
-	        i++;
-	        j--;
-	    }
-	    return 1;
+	    return recursive(S,0,S.length()-1);
 	}
 
 };
