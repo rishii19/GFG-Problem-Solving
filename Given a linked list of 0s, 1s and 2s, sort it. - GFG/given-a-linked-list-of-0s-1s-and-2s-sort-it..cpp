@@ -37,34 +37,44 @@ class Solution
         
         // Add code here
         
-        // vector<int> store;
-        int count1 = 0;
-        int count2 = 0;
-        int count0 = 0;
+        if(!head || !(head->next)) return head;
+        
+        Node* zero = new Node(0);
+        Node* one = new Node(0);
+        Node* two = new Node(0);
+        
+        Node* zeros = zero, *ones = one, *twos = two;
+        
         Node* curr = head;
         
         while(curr){
-            if(curr->data == 0) count0++;
-            else if(curr->data == 1) count1++;
-            else count2++;
-            curr = curr->next;
-        }
-        
-        Node* temp = head;
-        while(temp){
-            if(count0>0){
-                temp->data = 0;
-                count0--;
-            }else if (count1>0){
-                temp->data = 1;
-                count1--;
+            if(curr->data == 0){
+                zeros->next = curr;
+                zeros = zeros->next;
+                curr = curr->next;
+            }
+            else  if(curr->data == 1){
+                ones->next = curr;
+                ones = ones->next;
+                curr = curr->next;
             }
             else{
-                temp->data = 2;
-                count2--;
+                twos->next = curr;
+                twos = twos->next;
+                curr = curr->next;
             }
-            temp = temp->next;
         }
+        
+        zeros->next = ( one->next ) ? (one->next) : (two->next);
+        ones->next = two->next;
+        twos->next = NULL;
+        
+        head = zero->next;
+        
+        // delete zeros;
+        // delete ones;
+        // delete twos;
+        
         return head;
     }
 };
