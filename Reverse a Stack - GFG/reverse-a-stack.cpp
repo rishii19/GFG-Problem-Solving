@@ -10,15 +10,29 @@ using namespace std;
 
 class Solution{
 public:
+void insertAtBottom(stack<int> &st,int num){
+    if(st.size()==0) st.push(num);
+    
+    else{
+        int a = st.top();
+        st.pop();
+        insertAtBottom(st,num);
+        
+        
+        st.push(a);
+    }
+}
     void Reverse(stack<int> &st){
-        vector<int> store;
-        while(!st.empty()){
-            store.push_back(st.top());
+       if(st.size()>0){
+           int number = st.top();
             st.pop();
-        }
-        for(int i =0;i<store.size();i++){
-            st.push(store[i]);
-        }
+            Reverse(st);
+            
+            
+            insertAtBottom(st,number);
+       }
+       
+        
     }
 };
 
