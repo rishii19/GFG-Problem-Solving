@@ -17,20 +17,26 @@ class Solution{
     { 
     	
     	// Your code here
-    	vector<int> store(n);
+    	long long m = arr[0];
+    	for(int i =1;i<n;i++) m = max(arr[i],m);
+    	m++;
     	
+    	bool flag = true;
+    	int frontP = 0;
+    	int backP = n-1;
     	for(int i =0;i<n;i++){
-    	    store[i] = arr[i];
+    	    if(flag){
+    	        long long val = arr[backP--]%m;
+    	        arr[i] += val*m;
+    	    }else{
+    	        long long val = arr[frontP++]%m;
+    	        arr[i] += val*m;
+    	    }
+    	    flag = !flag;
     	}
-    	
-    	int i =0;
-    	int j = n-1;
-    	int k = 0;
-    	while(i<=j){
-    	    arr[k++] = store[j--];
-    	    arr[k++] = store[i++];
-    	}
-    	 
+       	 for(int i=0;i<n;i++){
+    	     arr[i] /= m;
+    	 }
     }
 };
 
