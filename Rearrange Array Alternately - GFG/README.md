@@ -5,17 +5,17 @@
 
 <p><strong>Example 1:</strong></p>
 
-<pre><strong>Input:
+<pre style="position: relative;"><strong>Input:
 </strong>n = 6
 arr[] = {1,2,3,4,5,6}
 <strong>Output: </strong>6 1 5 2 4 3<strong>
 Explanation: </strong>Max element = 6, min = 1, 
 second max = 5, second min = 2, and 
-so on... Modified array is : 6 1 5 2 4 3.</pre>
+so on... Modified array is : 6 1 5 2 4 3.<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
 
 <p><strong>Example 2:</strong></p>
 
-<pre><strong>Input:
+<pre style="position: relative;"><strong>Input:
 </strong>n = 11
 arr[]={10,20,30,40,50,60,70,80,90,100,110}
 <strong>Output:</strong>110 10 100 20 90 30 80 40 70 50 60<strong>
@@ -23,7 +23,7 @@ Explanation: </strong>Max element = 110, min = 10,
 second max = 100, second min = 20, and 
 so on... Modified array is : 
 110 10 100 20 90 30 80 40 70 50 60.
-</pre>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
 
 <p><strong>Your&nbsp;Task:</strong><br>
 The task is to complete the function <strong>rearrange</strong>() which rearranges elements as explained above. Printing of the modified array will be handled by driver code.</p>
