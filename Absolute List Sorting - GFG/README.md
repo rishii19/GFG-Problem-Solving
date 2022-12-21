@@ -5,27 +5,27 @@
 <p><br>
 <strong>Example 1</strong>: <strong> </strong></p>
 
-<pre style="position: relative;"><strong>Input</strong>: 
+<pre><strong>Input</strong>: 
 List: 1, -2, -3, 4, -5
 <strong>Output</strong>: 
 List: -5, -3, -2, 1, 4
 <strong>Explanation: </strong>
 Actual sorted order of {1, -2, -3, 4, -5}
 is {-5, -3, -2, 1, 4}
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p>&nbsp;</p>
 
 <p><strong>Example 2</strong>: <strong> </strong></p>
 
-<pre style="position: relative;"><strong>Input</strong>: 
+<pre><strong>Input</strong>: 
 List: 5, -10
 <strong>Output</strong>: 
 List: -10, 5
 <strong>Explanation:</strong>
 Actual sorted order of {5, -10}
 is {5, 10}
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p>&nbsp;</p>
 
