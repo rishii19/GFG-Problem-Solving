@@ -49,21 +49,20 @@ public:
     Node* sortList(Node* head)
     {
         // Your Code Here
-        vector<int> store;
+        
         Node* curr = head;
+        Node* temp;
         
-        while(curr!= nullptr){
-            store.push_back(curr->data);
-            curr = curr->next;
-        }
-        
-        sort(store.begin(),store.end());
-        
-        
-        curr = head;
-        for(int i =0;i<store.size();i++){
-            curr->data = store[i];
-            curr = curr->next;
+        while(curr->next){
+            if(curr->next->data<0){
+                temp = curr->next;
+                curr->next = curr->next->next;
+                temp->next = head;
+                head = temp;
+            }
+            else{
+                curr = curr->next;
+            }
         }
         return head;
     }
